@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import { Navbar } from "@/components/ui/Navbar";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,7 +38,11 @@ export default function RootLayout({
         <ParticleBackground />
         <Navbar />
         <div className="pt-16 relative z-10 flex-1">{children}</div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
 }
+
+
